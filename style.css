@@ -1,0 +1,137 @@
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><text x="8" y="24" style="font-size:24px">❤</text></svg>'), auto;
+}
+
+body {
+    font-family: 'Parisienne', cursive;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 合照背景 */
+.photo-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('images/photo1.jpg') center/cover no-repeat;
+    z-index: -1;
+    animation: changeBackground 15s infinite;
+}
+
+@keyframes changeBackground {
+    0% { background-image: url('images/photo1.jpg'); }
+    33% { background-image: url('images/photo2.jpg'); }
+    66% { background-image: url('images/photo3.jpg'); }
+    100% { background-image: url('images/photo1.jpg'); }
+}
+
+/* 毛玻璃遮罩 */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    border-radius: 15px;
+}
+
+/* 主容器 */
+.container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 182, 193, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-family: 'Qwigley', cursive;
+    font-size: 4rem;
+    color: #ff3366;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+/* 浪漫语录 */
+.quote {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin-bottom: 2rem;
+    animation: fadeInOut 10s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translateY(20px); }
+    20%, 80% { opacity: 1; transform: translateY(0); }
+}
+
+/* 倒计时卡片 */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 120px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card span {
+    display: block;
+    font-size: 2.5rem;
+    color: #ff4757;
+    font-family: monospace;
+}
+
+.label {
+    color: #ff6b6b;
+    font-size: 1rem;
+}
+
+/* 心跳效果 */
+.heartbeat {
+    font-size: 3rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* 点击爱心特效 */
+.click-heart {
+    position: absolute;
+    pointer-events: none;
+    animation: heartExplode 1s ease-out;
+}
+
+@keyframes heartExplode {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(3); }
+}

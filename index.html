@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时空恋人</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入手写字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Qwigley&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 心形气球容器 -->
+    <div class="hearts"></div>
+
+    <!-- 合照背景 -->
+    <div class="photo-background"></div>
+
+    <!-- 主内容 -->
+    <div class="container">
+        <h1>𝓛𝓸𝓿𝓮 𝓣𝓲𝓶𝓮𝓵𝓲𝓷𝓮</h1>
+        
+        <!-- 浪漫语录 -->
+        <div class="quote">" 你是我时光里的永恒坐标 "</div>
+        
+        <!-- 倒计时 -->
+        <div class="countdown">
+            <div class="card">
+                <span id="days">00</span>
+                <div class="label">Days</div>
+            </div>
+            <div class="card">
+                <span id="hours">00</span>
+                <div class="label">Hours</div>
+            </div>
+            <div class="card">
+                <span id="minutes">00</span>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="card">
+                <span id="seconds">00</span>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+        
+        <!-- 纪念日 -->
+        <div class="anniversary">
+            <div class="heartbeat">❤</div>
+            <p>相爱第 <span id="togetherDays">0</span> 天</p>
+        </div>
+    </div>
+
+    <!-- 背景音乐（可选） -->
+    <audio id="bgm" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
